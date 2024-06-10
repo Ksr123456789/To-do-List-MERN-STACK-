@@ -81,11 +81,14 @@ const Home = () => {
     <div>
 
       <section>
-      <form onSubmit={submitHandler}>
-          <input required value={title} onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='title' />
-          <input required value={description} onChange={(e)=>setDescription(e.target.value)} type="text" placeholder='description' />
-          <button disabled={loading} type='submit'>Add</button>
-          <h3>OR</h3>
+      <form className='gap-2 mb-10 mt-10 flex flex-col justify-center items-center' onSubmit={submitHandler}>
+
+
+      <input required value={title} onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='title' className="input input-bordered w-full max-w-xs" />
+      <input required value={description} onChange={(e)=>setDescription(e.target.value)} type="text" placeholder='description'className="input input-bordered w-full max-w-xs" />
+      <div className='mt-4'>
+      <button disabled={loading} type='submit' className="btn ">Add Task</button>
+      </div>  
         </form>
       </section>
       <section>

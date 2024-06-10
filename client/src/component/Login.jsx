@@ -39,12 +39,20 @@ function Login() {
   return (
     <div>
       <section>
-        <form onSubmit={submitHandler}>
-          <input required value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' />
-          <input required value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Password' />
-          <button disabled={loading} type='submit'>Login</button>
-          <h3>OR</h3>
-          <Link to={"/register"}>Sign Up</Link>
+        <form onSubmit={submitHandler} className='mt-32 flex flex-col justify-center items-center gap-10'>
+
+
+        <input required value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email'className="input input-bordered w-full max-w-xs" />
+        <input  required value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Password' className="input input-bordered w-full max-w-xs" />
+
+        <button disabled={loading} type='submit' className="btn w-20">Login</button>
+
+
+         <div className='flex flex-col justify-center items-center gap-2'>
+           <h3 className='font-bold'>OR</h3>
+           <Link className='hover:text-blue-700 hover:underline ' to={"/register"}>{`don't have an account !!`}</Link>
+        </div> 
+          
         </form>
       </section>
     </div>

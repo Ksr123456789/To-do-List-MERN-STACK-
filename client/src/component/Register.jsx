@@ -37,13 +37,24 @@ function Register() {
   return (
     <div>
       <section>
-        <form onSubmit={submitHandler}>
-          <input required value={name} onChange={(e)=>setName(e.target.value)} type="name" placeholder='name' />
-          <input required value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' />
-          <input required value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Password' />
-          <button disabled={loading} type='submit'>Register</button>
+        <form className='flex flex-col justify-center items-center mt-32 gap-4' onSubmit={submitHandler}>
+
+
+        <input required value={name} onChange={(e)=>setName(e.target.value)} type="name" placeholder='name'className="input input-bordered w-full max-w-xs" />
+
+        <input required value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder='Email' className="input input-bordered w-full max-w-xs" />
+
+        <input required value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Password'className="input input-bordered w-full max-w-xs" />
+
+          <div className='mt-4'>
+          <button disabled={loading} type='submit' className="btn">Register</button>     
+          </div>
+          
+          <div className='flex flex-col items-center gap-2'>
           <h3>OR</h3>
-          <Link to={"/login"}>Sign in</Link>
+          <Link className='hover:text-blue-400 hover:underline' to={"/login"}>Do you have an account ?</Link>
+          </div>
+          
           
         </form>
       </section>

@@ -21,9 +21,14 @@ function Profile() {
   },[isAuthenticated, user?.name, user?.email])
 
   return (
-    <div>
-      <h1>{userName}</h1>
-      <p>{userEmail}</p>
+    <div className='flex flex-col justify-center items-center mt-40 gap-20'>
+      {
+        isAuthenticated ? (<><h1 className='text-3xl font-bold text-gray-600'>UserName :- {userName}</h1>
+          <p className='text-3xl font-bold text-gray-600'>Email :- {userEmail}</p></>)
+           : (<p className='text-3xl font-bold text-gray-600'>Login first</p>
+           )
+      }
+      
     </div>
   )
 }
